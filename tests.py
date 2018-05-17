@@ -1,5 +1,6 @@
 import unittest
-from graph import Vertex
+
+from graph import Vertex, Edge
 
 class VertexTestCase(unittest.TestCase):
     def test_creating_vertex(self):
@@ -7,8 +8,12 @@ class VertexTestCase(unittest.TestCase):
         self.assertEqual(v.data, "foo")
 
 
-
-
+class EdgeTestCase(unittest.TestCase):
+    def test_creating_edge(self):
+        u, v = Vertex("foo"), Vertex("bar")
+        e = Edge(u, v)
+        self.assertIs(e.start, u)
+        self.assertIs(e.end, v)
 
 
 
