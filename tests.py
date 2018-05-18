@@ -10,7 +10,7 @@ class VertexTestCase(unittest.TestCase):
     def test_vtx_contains_incident_edges(self):
         u, v = Vertex("foo"), Vertex("bar")
         e = Edge(u, v)
-        self.assertCountEqual(v.incident_edges, [e])
+        self.assertCountEqual(v.incident_edges, {u: e})
 
     def test_vtx_get_adjacent_edges(self):
         u, v = Vertex("foo"), Vertex("bar")
