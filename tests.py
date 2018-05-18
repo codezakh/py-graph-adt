@@ -12,6 +12,11 @@ class VertexTestCase(unittest.TestCase):
         e = Edge(u, v)
         self.assertCountEqual(v.incident_edges, [e])
 
+    def test_vtx_get_adjacent_edges(self):
+        u, v = Vertex("foo"), Vertex("bar")
+        e = Edge(u, v)
+        self.assertEqual(list(u.adjacent), [v])
+
 class EdgeTestCase(unittest.TestCase):
     def test_creating_edge(self):
         u, v = Vertex("foo"), Vertex("bar")
@@ -25,15 +30,6 @@ class GraphTestCase(unittest.TestCase):
         g.add_vertex("first")
         g.add_vertex("second")
         self.assertEqual(g.vertex_count, 2)
-
-    def test_get_adjacent_vertices(self):
-        g = GraphADT()
-        vtx_1 = g.add_vertex("first")
-        vtx_2 = g.add_vertex("second")
-        vtx_3 = g.add_vertex("third")
-        edge = g.add_edge(vtx_1, vtx_2)
-        self.assertSetEqual(vtx_1.incident_edges, set(edge))
-
 
 if __name__ == "__main__":
     unittest.main()
