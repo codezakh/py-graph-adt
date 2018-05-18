@@ -22,8 +22,8 @@ class EdgeTestCase(unittest.TestCase):
 class GraphTestCase(unittest.TestCase):
     def test_adding_vertices(self):
         g = GraphADT()
-        first_vertex = g.add_vertex("first")
-        second_vertex = g.add_vertex("second")
+        g.add_vertex("first")
+        g.add_vertex("second")
         self.assertEqual(g.vertex_count, 2)
 
 
