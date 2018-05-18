@@ -24,4 +24,16 @@ class GraphADT:
         return len(self.vertices)
 
     def add_vertex(self, data):
-        self.vertices.append(Vertex(data))
+        vertex = Vertex(data)
+        self.vertices.append(vertex)
+        return vertex
+
+    def add_edge(self, source, endpoint):
+        edge = Edge(source, endpoint)
+        self.edges.append(edge)
+        return edge
+
+    def get_adjacent(self, vertex):
+        for edge in self.edges:
+            if edge.start is vertex:
+                yield edge.end
