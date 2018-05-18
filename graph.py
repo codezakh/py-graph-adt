@@ -16,8 +16,8 @@ class Edge:
         return id(self)
 
 class GraphADT:
-    vertices = []
-    edges = []
+    vertices = set() 
+    edges = set() 
 
     @property
     def vertex_count(self):
@@ -25,12 +25,12 @@ class GraphADT:
 
     def add_vertex(self, data):
         vertex = Vertex(data)
-        self.vertices.append(vertex)
+        self.vertices.add(vertex)
         return vertex
 
     def add_edge(self, source, endpoint):
         edge = Edge(source, endpoint)
-        self.edges.append(edge)
+        self.edges.add(edge)
         return edge
 
     def get_adjacent(self, vertex):
