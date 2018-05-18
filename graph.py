@@ -60,3 +60,10 @@ class GraphADT:
         else:
             self.edges.remove(edge)
 
+    def repair(self):
+        #TODO: This should ensure that the internal data structures
+        #used by GraphADT and Vertex are self-consistent. The GraphADT
+        #should be able to remove a nonexistent edge from self.edges or
+        #add an edge that appears in a Vertex but not in the GraphADT.
+        pass
+
